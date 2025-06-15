@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pomodoro Tracker - Settings</title>
+    <link rel="stylesheet" type="text/css" href="../css/options.css" />
+  </head>
+  <body>
+    <h1>Pomodoro Settings</h1>
+    <p>Configure your focus sessions</p>
+    <div class="settings-section">
+      <h3>Timer settings</h3>
+      <div class="settings-row">
+        <label for="numberRounds">Number of rounds</label>
+        <input
+          type="number"
+          id="numberRounds"
+          name="numberRounds"
+          min="1"
+          max="10"
+          value="4"
+        />
+      </div>
+      <div class="settings-row">
+        <label for="focusDurationMin">Focus mode duration</label>
+        <input
+          type="number"
+          class="time-input"
+          id="focusDurationMin"
+          value="05"
+          min="0"
+          max="59"
+        />
+        <span class="time-separator">:</span>
+        <input
+          type="number"
+          class="time-input"
+          id="focusDurationSec"
+          value="00"
+          min="0"
+          max="59"
+        />
+      </div>
+      <div class="settings-row">
+        <label for="shortBreakDurationMin">Short break duration</label>
+        <input
+          type="number"
+          class="time-input"
+          id="shortBreakDurationMin"
+          value="05"
+          min="0"
+          max="59"
+        />
+        <span class="time-separator">:</span>
+        <input
+          type="number"
+          class="time-input"
+          id="shortBreakDurationSec"
+          value="00"
+          min="0"
+          max="59"
+        />
+      </div>
+      <div class="settings-row">
+        <label for="longBreakDurationMin">Long break duration</label>
+        <input
+          type="number"
+          class="time-input"
+          id="longBreakDurationMin"
+          value="05"
+          min="0"
+          max="59"
+        />
+        <span class="time-separator">:</span>
+        <input
+          type="number"
+          class="time-input"
+          id="longBreakDurationSec"
+          value="00"
+          min="0"
+          max="59"
+        />
+      </div>
+    </div>
+    <div class="settings-section">
+      <h3>Website blacklist</h3>
+      <div class="settings-row">
+        <input type="text" id="newBlacklistEntry" name="newBlacklistEntry" />
+        <button id="addNewBlacklistEntry">Add</button>
+      </div>
+      <div id="blacklistUrlList"></div>
+    </div>
+    <div class="settings-actions">
+      <button id="closeSettings">Cancel</button>
+      <button id="saveSettings">Save Settings</button>
+    </div>
+    <script src="../scripts/options.js"></script>
+  </body>
+</html>

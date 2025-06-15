@@ -51,6 +51,19 @@ function showSettingsScreen() {
   chrome.runtime.openOptionsPage();
 }
 
+const defaultSettings = {
+  numberRounds: 4,
+  focusDuration: "20:00",
+  shortBreakDuration: "05:00",
+  longBreakDuration: "15:00",
+};
+
+async function setDefaultSettingValues() {
+  const data = await chrome.storage.sync.get("settings");
+  if (!data.settings) chrome.storage.sync.set("settings", defaultSettings);
+}
+
 // Initialize
 showStartScreen();
+setDefaultSettingValues();
 document.getElementById("settings").onclick = showSettingsScreen;

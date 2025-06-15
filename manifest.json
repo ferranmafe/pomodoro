@@ -4,13 +4,14 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "static/index.html"
   },
   "icons": {
-    "16": "images/timer-16.png",
-    "32": "images/timer-32.png",
-    "48": "images/timer-48.png",
-    "128": "images/timer-128.png"
+    "16": "assets/timer-16.png",
+    "32": "assets/timer-32.png",
+    "48": "assets/timer-48.png",
+    "128": "assets/timer-128.png"
   },
-  "options_page": "options.html"
+  "options_page": "static/options.html",
+  "permissions": ["storage"]
 }
