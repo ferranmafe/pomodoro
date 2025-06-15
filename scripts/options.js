@@ -1,6 +1,6 @@
 /* 1. DEFAULT SETTINGS DEFINITION */
 /* --------------------------- */
-const settings = {
+let settings = {
   timer: {
     rounds: 4,
     focusDuration: "25:00",
@@ -9,6 +9,16 @@ const settings = {
   },
   blacklist: ["www.reddit.com", "www.youtube.com", "www.instagram.com"],
 };
+
+const storedSettings = chrome.storage.sync.get("settings");
+if (!storedSettings) {
+  chrome.storage.sync.set({ settings }, () => {
+    console.log("Settings stored");
+  });
+} else {
+  settings = storedSettings;
+  console.log("Settings already present, skipping defaults!");
+}
 
 /* 2. EVENT HANDLERS */
 /* --------------------------- */
@@ -77,7 +87,9 @@ function addItemToBlacklist() {
 }
 
 function saveSettings() {
-  console.log(settings);
+  chrome.storage.sync.set({ settings }, () => {
+    console.log("Settings stored");
+  });
 }
 
 /* 3. ASSIGNING HANDLERS TO HTML ELEMENTS */
